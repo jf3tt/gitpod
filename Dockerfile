@@ -3,7 +3,7 @@ ENV HOME=/home/gitpod
 WORKDIR $HOME
 RUN { echo && echo "PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \\\$ '" ; } >> .bashrc
 
-RUN addgroup -S gitpod && adduser -S gitpod -G gitpod \
+RUN addgroup -S gitpod && adduser -S gitpod -G gitpod -u 33333 \
     # Remove `use_pty` option and enable passwordless sudo for users in the 'sudo' group
     # To emulate the workspace-session behavior within dazzle build env
     && mkdir /workspace && chown -hR gitpod:gitpod /workspace
@@ -12,6 +12,7 @@ RUN chmod g+rw /home && \
     mkdir -p /workspace && \
     chown -R gitpod:gitpod /home/gitpod && \
     chown -R gitpod:gitpod /workspace;
+
 
 USER gitpod
 
