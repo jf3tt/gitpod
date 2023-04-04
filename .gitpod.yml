@@ -1,1 +1,8 @@
 image: moshedayan/gitpod:latest
+
+tasks:
+  - name: run tmux
+    command: /usr/bin/tmux
+    env:
+      EDITOR: vim
+      AWS_PROFILE: private
