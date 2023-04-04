@@ -38,7 +38,6 @@ RUN touch /root/dontremove
 RUN apt update && \
     apt install -y \
     git && \
-    git-lfs && \
     tmux && \
     fish && \
     neovim
@@ -47,6 +46,6 @@ RUN apt update && \
 ENV EDITOR nvim
 ENV USER gitpod
 
-COPY .dotfiles ~/.config
+COPY .dotfiles /workspace/.config
 
 # CMD ["/usr/bin/tmux"]
