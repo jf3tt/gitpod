@@ -45,4 +45,4 @@ RUN apt update && \
 ENV EDITOR nvim
 # ENV USER root
 
-COPY .dotfiles /home/gitpod/.dotfiles
+COPY .dotfiles /home/gitpod/.config

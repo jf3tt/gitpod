@@ -3,7 +3,7 @@ image: moshedayan/gitpod:latest
 
 tasks:
   - name: tmux
-    command: /usr/bin/tmux -f /home/gitpod/.dotfiles/tmux/tmux.conf
+    command: /usr/bin/tmux -f /home/gitpod/.config/tmux/tmux.conf
     env:
       EDITOR: vim
       AWS_PROFILE: private
