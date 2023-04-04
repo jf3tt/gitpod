@@ -1,14 +1,16 @@
-image: moshedayan/gitpod:latest
-  # file: Dockerfile
+image: #moshedayan/gitpod:latest
+  file: Dockerfile
 
 tasks:
   - name: tmux
-    command: /usr/bin/tmux -f /home/gitpod/.config/tmux/tmux.conf
+    command: /usr/bin/tmux
     env:
       EDITOR: vim
       AWS_PROFILE: private
+    init: touch ~/.zshrc
   - name: fish
-    command: /usr/bin/zsh
+    command: /usr/bin/zsh "/home/gitpod/.zsh/spaceship/spaceship.zsh
     env:
       EDITOR: vim
       AWS_PROFILE: private
+    init: touch ~/.zshrc
