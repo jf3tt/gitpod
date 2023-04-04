@@ -37,11 +37,10 @@ RUN touch /root/dontremove
 
 RUN apt update && \
     apt install -y \
-    git && \
-    tmux && \
-    fish && \
+    git \
+    tmux \
+    fish \
     neovim
-    
 
 ENV EDITOR nvim
 ENV USER gitpod
