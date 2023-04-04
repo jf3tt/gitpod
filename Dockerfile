@@ -35,10 +35,13 @@ RUN rm -rf /root
 RUN mkdir -p /root
 RUN touch /root/dontremove
 
-RUN apk add --update \
+RUN apk add --no-cache --update \
 git \
 fish \
 util-linux \
-tmux
+tmux \
+vim
+
+ENV EDITOR vim
 
 CMD ["/usr/bin/tmux"]
