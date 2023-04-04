@@ -41,7 +41,8 @@ RUN apt update && \
     fish \
     neovim \
     sudo \
-    zsh
+    zsh \ 
+    curl 
 
 RUN mkdir -p "/home/gitpod/.zsh" 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
