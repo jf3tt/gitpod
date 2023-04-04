@@ -44,14 +44,6 @@ RUN apt update && \
     zsh \ 
     curl 
 
-RUN mkdir -p "/home/gitpod/.zsh" 
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-RUN git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "/home/gitpod/.zsh/spaceship"
-RUN zsh "$HOME/.zsh/spaceship/spaceship.zsh"
-
-
 ENV EDITOR nvim
-# ENV USER root
 
 COPY .dotfiles /home/gitpod/.config

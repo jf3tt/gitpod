@@ -2,16 +2,9 @@ image: moshedayan/gitpod:latest
   # file: Dockerfile
 
 tasks:
-  # - name: tmux
-  #   command: /usr/bin/tmux
-  #   env:
-  #     EDITOR: vim
-  #     AWS_PROFILE: private
-  #   init: touch ~/.zshrc
   - name: zsh
-    # command: source "/home/gitpod/.zsh/spaceship/spaceship.zsh"
     env:
       EDITOR: vim
       AWS_PROFILE: private
       SHELL: zsh
-    before: touch /home/gitpod/.zshrc
+    command: exec zsh 
