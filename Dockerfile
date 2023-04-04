@@ -40,7 +40,7 @@ RUN apt update && \
     tmux \
     fish \
     neovim \
-    sudoers
+    sudo
 
 ENV EDITOR nvim
 ENV USER gitpod
