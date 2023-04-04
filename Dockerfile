@@ -1,9 +1,9 @@
-FROM alpine:3.8
+FROM ubuntu:lunar
 ENV HOME=/home/gitpod
 WORKDIR $HOME
-RUN { echo && echo "PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \\\$ '" ; } >> .bashrc
+#RUN { echo && echo "PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \\\$ '" ; } >> .bashrc
 
-RUN addgroup -S gitpod -g 33333 && adduser -S gitpod -G gitpod -u 33333 \
+RUN groupadd -g 33333 gitpod && useradd -g gitpod -u 33333 gitpod \
     # Remove `use_pty` option and enable passwordless sudo for users in the 'sudo' group
     # To emulate the workspace-session behavior within dazzle build env
     && mkdir /workspace && chown -hR gitpod:gitpod /workspace
@@ -14,7 +14,7 @@ RUN chmod g+rw /home && \
     chown -R gitpod:gitpod /workspace;
 
 
-USER gitpod
+# USER gitpod
 
 ENV SHELL /bin/fish
 ENV USE_LOCAL_GIT true
@@ -35,13 +35,19 @@ RUN rm -rf /root
 RUN mkdir -p /root
 RUN touch /root/dontremove
 
-RUN apk add --no-cache --update \
-git \
-fish \
-util-linux \
-tmux \
-vim
+# RUN apk add --no-cache --update \
+# git \
+# fish \
+# util-linux \
+# tmux \
+# vim
+
+RUN apt update && \
+    apt install -y \
+    git git-lfs tmux
+    # && fish
 
 ENV EDITOR vim
+ENV USER gitpod
 
 CMD ["/usr/bin/tmux"]
