@@ -1,7 +1,6 @@
 FROM ubuntu:lunar
 ENV HOME=/home/gitpod
 WORKDIR $HOME
-#RUN { echo && echo "PS1='\[\e]0;\u \w\a\]\[\033[01;32m\]\u\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \\\$ '" ; } >> .bashrc
 
 RUN groupadd -g 33333 gitpod && useradd -g gitpod -u 33333 gitpod \
     # Remove `use_pty` option and enable passwordless sudo for users in the 'sudo' group
@@ -45,6 +44,4 @@ RUN apt update && \
 ENV EDITOR nvim
 ENV USER gitpod
 
-COPY .dotfiles /workspace/.config
-
-# CMD ["/usr/bin/tmux"]
+COPY .dotfiles /workspace/.dotfiles
