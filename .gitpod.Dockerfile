@@ -1,21 +1,21 @@
-FROM gitpod/workspace-base
+FROM gitpod/workspace-base:latest
 
 USER gitpod
 
-# Install custom tools, runtime, etc. using apt-get
-# For example, the command below would install "bastet" - a command line tetris clone:
-#
-
-RUN sudo apt-add-repository ppa:fish-shell/release-3
+RUN 
  
-RUN sudo apt-get -q update && \
+RUN sudo apt-add-repository ppa:fish-shell/release-3 && \
+    sudo apt-get -q update && \
     sudo apt-get install -yq \
     fish && \
     sudo rm -rf /var/lib/apt/lists/*
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
-    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+    sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && \
+    rm kubectl 
 
-# ENTRYPOINT ["fish"]
+RUN sudo chsh -s /usr/local/bin/fish
+
+CMD ["fish"]
 #
 # More information: https://www.gitpod.io/docs/config-docker/
