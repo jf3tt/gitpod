@@ -8,7 +8,7 @@ tasks:
       EDITOR: vim
       AWS_PROFILE: private
   - name: fish
-    command: /usr/bin/fish
+    command: /usr/bin/zsh
     env:
       EDITOR: vim
       AWS_PROFILE: private
