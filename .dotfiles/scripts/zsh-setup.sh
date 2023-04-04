@@ -5,5 +5,3 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "/home/gitpod/.zsh/themes/spaceship-prompt" --depth=1
 ln -s "/home/gitpod/.zsh/themes/spaceship-prompt/spaceship.zsh-theme" "/home/gitpod/.zsh/themes/spaceship.zsh-theme"
-
-ls
