@@ -1,8 +1,14 @@
 image: moshedayan/gitpod:latest
 
 tasks:
-  - name: run tmux
-    command: /usr/bin/tmux
+  - name: tmux
+    command: /usr/bin/tmux -f .dotfiles/.tmux.conf
+    env:
+      EDITOR: vim
+      AWS_PROFILE: private
+      SHELL: fish
+  - name: fish
+    command: /usr/bin/fish -f .dotfiles/config.fish
     env:
       EDITOR: vim
       AWS_PROFILE: private

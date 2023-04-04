@@ -35,19 +35,18 @@ RUN rm -rf /root
 RUN mkdir -p /root
 RUN touch /root/dontremove
 
-# RUN apk add --no-cache --update \
-# git \
-# fish \
-# util-linux \
-# tmux \
-# vim
-
 RUN apt update && \
     apt install -y \
-    git git-lfs tmux
-    # && fish
+    git && \
+    git-lfs && \
+    tmux && \
+    fish && \
+    neovim
+    
 
-ENV EDITOR vim
+ENV EDITOR nvim
 ENV USER gitpod
 
-CMD ["/usr/bin/tmux"]
+COPY .dotfiles ~/.config
+
+# CMD ["/usr/bin/tmux"]
