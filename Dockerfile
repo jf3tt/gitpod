@@ -16,7 +16,7 @@ RUN chmod g+rw /home && \
 
 # USER gitpod
 
-ENV SHELL /bin/fish
+ENV SHELL /bin/bash
 ENV USE_LOCAL_GIT true
 
 
