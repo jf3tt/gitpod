@@ -1,14 +1,14 @@
-image: moshedayan/gitpod:latest
+image: 
+  file: Dockerfile
 
 tasks:
   - name: tmux
-    command: /usr/bin/tmux -f .dotfiles/tmux/tmux.conf
+    command: /usr/bin/tmux -f /home/gitpod/.dotfiles/tmux/tmux.conf
     env:
       EDITOR: vim
       AWS_PROFILE: private
-      SHELL: fish
   - name: fish
-    command: /usr/bin/fish -f .dotfiles/fish/config.fish
+    command: /usr/bin/fish
     env:
       EDITOR: vim
       AWS_PROFILE: private

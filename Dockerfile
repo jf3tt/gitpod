@@ -43,6 +43,6 @@ RUN apt update && \
     sudo
 
 ENV EDITOR nvim
-ENV USER gitpod
+# ENV USER root
 
-COPY .dotfiles /workspace/.dotfiles
+COPY .dotfiles /home/gitpod/.dotfiles
