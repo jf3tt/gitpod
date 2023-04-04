@@ -25,3 +25,5 @@ RUN chown -R $GITPOD_UID_GID:$GITPOD_UID_GID $GITPOD_HOME
 RUN rm -rf /root
 RUN mkdir -p /root
 RUN touch /root/dontremove
+
+RUN apk add --update git
