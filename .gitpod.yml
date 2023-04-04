@@ -1,5 +1,5 @@
-image: 
-  file: Dockerfile
+image: moshedayan/gitpod:latest
+  # file: Dockerfile
 
 tasks:
   - name: tmux
