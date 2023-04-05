@@ -1,15 +1,15 @@
 #!/bin/bash
 
-TMPDIR=$(mktemp -d)
+dotfiles_dir="~/.config/scripts"
 
-CURRENT=$PWD
+if [ ! -d "$dotfiles_dir" ]; then
+  echo "Error: .dotfiles folder not found"
+  exit 1
+fi
 
-cd $TMPDIR
-
-for script in /workspace/gitpod/scripts/*; do
-  bash "$script"
+for script in "$dotfiles_dir"/*.sh; do
+  if [ -f "$script" ]; then
+    echo "Running script: $script"
+    bash "$script"
+  fi
 done
-
-cd $CURRENT
-
-rm -rf $TMPDIR
