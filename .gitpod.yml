@@ -2,10 +2,10 @@ image: #moshedayan/gitpod:latest
   file: .gitpod.Dockerfile
 
 tasks:
-  - name: zsh
+  - name: fish
     env:
-      EDITOR: vim
+      EDITOR: nvim
       AWS_PROFILE: private
-      SHELL: zsh
-    command: exec zsh 
+      SHELL: fish
+    command: exec fish 
     # init: bash ~/.config/setup.sh
