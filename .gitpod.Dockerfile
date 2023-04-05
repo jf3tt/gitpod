@@ -27,7 +27,7 @@ ENV GITPOD_HOME /home/gitpod
 ENV GITPOD_UID_GID 33333
 
 # Keep the stemn user configuration
-RUN chown -R $GITPOD_UID_GID:$GITPOD_UID_GID $GITPOD_HOME
+# RUN chown -R $GITPOD_UID_GID:$GITPOD_UID_GID $GITPOD_HOME
 
 # Remove root user config that gitpod copies over
 RUN rm -rf /root
@@ -45,8 +45,6 @@ RUN apt update && \
     zsh \ 
     curl \
     fonts-firacode
-
-ENV EDITOR nvim
 
 COPY .dotfiles /home/gitpod/.config
 
