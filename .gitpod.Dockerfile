@@ -1,4 +1,4 @@
-FROM ubuntu:lunar
+FROM ubuntu:kinetic
 ENV HOME=/home/gitpod
 WORKDIR $HOME
 
@@ -36,16 +36,20 @@ RUN touch /root/dontremove
 
 RUN apt update && \
     apt install -y \
+    software-properties-common \
     git \
     tmux \
     fish \
     neovim \
     sudo \
     zsh \ 
-    curl 
+    curl \
+    fonts-firacode
 
 ENV EDITOR nvim
 
 COPY .dotfiles /home/gitpod/.config
 
-CMD ["/usr/bin/tmux"]
+# RUN /home/gitpod/.config/setup.sh
+
+CMD ["/bin/sh", "-c", "fish"]
