@@ -3,7 +3,7 @@
 dotfiles_dir="~/.config/scripts"
 
 if [ ! -d "$dotfiles_dir" ]; then
-  echo "Error: .dotfiles folder not found"
+  echo "Error: $dotfiles_dir folder not found"
   exit 1
 fi
 

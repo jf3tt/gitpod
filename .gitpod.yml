@@ -8,3 +8,4 @@ tasks:
       AWS_PROFILE: private
       SHELL: zsh
     command: exec zsh 
+    # init: bash ~/.config/setup.sh
