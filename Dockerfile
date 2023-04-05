@@ -47,3 +47,5 @@ RUN apt update && \
 ENV EDITOR nvim
 
 COPY .dotfiles /home/gitpod/.config
+
+CMD ["/usr/bin/tmux"]
