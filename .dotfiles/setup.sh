@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dotfiles_dir="~/.config/scripts"
+dotfiles_dir="/home/gitpod/.config/scripts"
 
 if [ ! -d "$dotfiles_dir" ]; then
   echo "Error: $dotfiles_dir folder not found"
