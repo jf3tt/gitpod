@@ -48,6 +48,8 @@ RUN apt update && \
 
 COPY .dotfiles /home/gitpod/.config
 
+RUN chmod -R 0777 /home/gitpod/.config
+
 # RUN /home/gitpod/.config/setup.sh
 
 CMD ["/bin/sh", "-c", "fish"]

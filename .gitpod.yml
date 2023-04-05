@@ -1,5 +1,5 @@
-image: #moshedayan/gitpod:latest
-  file: .gitpod.Dockerfile
+image: gitpod/workspace-base:latest
+  # file: .gitpod.Dockerfile
 
 tasks:
   - name: fish
@@ -7,5 +7,5 @@ tasks:
       EDITOR: nvim
       AWS_PROFILE: private
       SHELL: fish
-    command: exec fish 
+    command: /usr/bin/fish 
     # init: bash ~/.config/setup.sh
