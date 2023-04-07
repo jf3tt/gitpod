@@ -5,7 +5,6 @@ USER root
 
 WORKDIR /home/gitpod
 USER gitpod
-RUN ls -la /home/gitpod
 
 RUN bash ~/.config/setup.sh
 RUN bash ~/.config/clean.sh
