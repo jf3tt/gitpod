@@ -28,4 +28,4 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: moshedayan/gitpod:{{steps.tag.outputs.tag}}, moshedayan/gitpod:latest
+          tags: moshedayan/gitpod:latest
