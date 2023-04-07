@@ -7,4 +7,4 @@ sudo ln -s /home/gitpod/miniconda3/bin/conda /usr/bin/conda
 
 conda init fish
 
-conda create --name dev
+conda create -y -n dev
